@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Media Viewer</title>
+    <meta name="theme-color" content="#0e0e0e">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.addEventListener("keydown", function (event) {
+            if (event.key == 'd' || event.key == 'ArrowRight') {
+                plusSlides(1);
+            } else if (event.key == 'a' || event.key == 'ArrowLeft') {
+                plusSlides(-1);
+            }
+        });
+
+        window.onload = function () {
+
+            if (window.File && window.FileList && window.FileReader) {
+
+                var filesInput = document.getElementById("uploadFile");
+
+                filesInput.addEventListener("change", function (event) {
+
+                    var files = event.target.files;
+
+                    if (files.length) {
+                        var output = document.getElementById("result");
+                        var resultWrapper = document.getElementById("resultWrapper");
+
+                        resultWrapper.removeChild(output);
+
+                        var output = document.createElement("output");
+                        output.setAttribute("id", "result");
+                        document.getElementById("resultWrapper").appendChild(output);
+                    }
+
+                    var functionItteration = 0;
+
+                    for (var i = 0; i < files.length; i++) {
+                        var file = files[i];
+
+                        var picReader = new FileReader();
+
+                        picReader.addEventListener("load", function (event) {
+
+                            var picFile = event.target;
+
+                            var div = document.createElement("div");
+
+                            div.classList.add("mySlides");
+
+                            let datatype = picFile.result.split('/').shift();
+
+                            if (datatype == "data:video") {
+                                div.innerHTML = "<video muted autoplay loop class='background' src='" + picFile.result + "'" + "> </video> <video muted autoplay loop class='foreground' src='" + picFile.result + "'" + ">";
+                            } else {
+                                div.innerHTML = "<img class='background' src='" + picFile.result + "'" + "> <img class='foreground' src='" + picFile.result + "'" + ">";
+                            }
+
+                            output.insertBefore(div, null);
+
+                            functionItteration++;
+
+                            if (functionItteration == files.length) {
+                                if (files.length > 1) {
+                                    var hidden = document.getElementsByClassName("hidden");
+
+                                    document.getElementById("prevDisplay").style.display = "block";
+                                    document.getElementById("nextDisplay").style.display = "block";
+                                } else {
+                                    document.getElementById("prevDisplay").style.display = "none";
+                                    document.getElementById("nextDisplay").style.display = "none";
+                                }
+                                showSlides(slideIndex = 1);
+                            }
+                        });
+                        picReader.readAsDataURL(file);
+                    }
+                });
+            }
+            else {
+                console.log("Your browser does not support File API");
+            }
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        function openFullscreen() {
+            var elem = document.documentElement;
+            if (document.fullscreenElement && elem.requestFullscreen) {
+                document.exitFullscreen();
+                document.getElementById("fullscreenButton").style.backgroundImage = "url(icons/enter-fullscreen.png)";
+            } else {
+                elem.requestFullscreen();
+                document.getElementById("fullscreenButton").style.backgroundImage = "url(icons/exit-fullscreen.png)";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="resultWrapper">
+        <output id="result">
+    </div>
+
+    <a class="prev" id="prevDisplay" onclick="plusSlides(-1)">
+        <div class="arrowBackground"></div>
+        <p>&#10094;</p>
+    </a>
+    <a class="next" id="nextDisplay" onclick="plusSlides(1)">
+        <p>&#10095;</p>
+        <div class="arrowBackground"></div>
+    </a>
+
+    <button id="fullscreenButton" onclick="openFullscreen();"></button>
+    <input id="uploadFile" type='file' multiple>
+</body>
+
+</html>

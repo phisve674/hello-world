@@ -6,7 +6,7 @@ html, body {
 }
 
 html {
-    background-image: url(/sandbox\ 3/img/bg.jpg);
+    background-image: url(/img/bg.jpg);
     background-position: center center;
     background-size: cover;
     overflow: hidden;
