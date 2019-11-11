@@ -1,0 +1,130 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: arial;
+    overflow: hidden;
+}
+
+#wrapper {
+    display: flex;
+    height: 100%;
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#sidebar {
+    height: 100%;
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    transition: width .25s;
+    background: rgb(32,32,32);
+}
+
+#sidebar a {
+    text-decoration: none;
+}
+
+.sidebar_item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 75px;
+    transition: background .1s;
+}
+
+.icon {
+    padding-right: 23.5px;
+    width: 28px;
+    position: absolute;
+    transition: margin .5s;
+    filter: invert() brightness(50%);
+}
+
+.sidebar_item p {
+    opacity: 0;
+    color: gray;
+    padding-right: 27.5px;
+    transition: padding .25s, opacity .25s;
+}
+
+.sidebar_item:hover {
+    background: rgb(64,64,64);
+}
+
+.sidebar_item:hover p {
+    padding-right: 75px;
+    opacity: 1;
+}
+
+#sidebar:hover {
+    width: 180px;
+}
+
+#content {
+    margin-right: 20px;
+    margin-left: auto;
+    height: 100%;
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+#middle_content {
+    height: 95%;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#middle_content h1 {
+    font-size: 50px;
+}
+
+#middle_content p {
+    font-size: 20px;
+}
+
+#bottom_content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 5%;
+}
+
+#bottom_content a {
+    color: white;
+}
+
+#bottom_content a:active {
+    color: silver;
+}
+
+@media screen and (max-width: 875px) {
+    #middle_content {
+        text-align: right;
+    }
+}
+
+@media (hover: none) {
+    #sidebar:hover {
+        width: 75px;
+    }
+
+    .sidebar_item:hover {
+        background: none;
+    }
+    
+    .sidebar_item:hover p {
+        opacity: 0;
+    }
+}
