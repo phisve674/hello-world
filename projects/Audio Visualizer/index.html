@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <script>
+        function playPause() {
+            var img = document.getElementById("img");
+            var audio = document.getElementById("audio");
+
+            if (img.src == "http://127.0.0.1:5501/icons/pause.png") {
+                img.src = "icons/play.png";
+                audio.pause();
+            } else {
+                img.src = "icons/pause.png";
+                audio.play();
+            }
+        }
+        window.SetVolume = function (val) {
+            var player = document.getElementById('audio');
+            console.log('Before: ' + player.volume);
+            player.volume = val / 100;
+            console.log('After: ' + player.volume);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="file" id="thefile" accept="audio/*" />
+    <div id="content">
+        <canvas id="canvas"></canvas>
+        <audio id="audio" controls></audio>
+        <div id="container">
+            <div id="header"></div>
+            <input  id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
+            <button id="button" onclick="playPause();">
+                <img id="img" src="icons/pause.png">
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
