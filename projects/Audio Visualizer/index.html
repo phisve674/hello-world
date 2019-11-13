@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
     <script>
+        var status = "playing";
+
         function playPause() {
             var img = document.getElementById("img");
             var audio = document.getElementById("audio");
 
-            if (img.src == "https://phisve674.github.io/projects/Audio%20Visualizer/icons/pause.png") {
+            if (status == "playing") {
                 img.src = "icons/play.png";
                 audio.pause();
+                status = "paused";
             } else {
                 img.src = "icons/pause.png";
                 audio.play();
+                status = "playing";
             }
         }
         window.SetVolume = function (val) {
