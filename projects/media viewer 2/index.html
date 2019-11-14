@@ -55,8 +55,10 @@
 
                             if (datatype == "data:video") {
                                 div.innerHTML = "<video muted autoplay loop class='background' src='" + picFile.result + "'" + "> </video> <video muted autoplay loop class='foreground' src='" + picFile.result + "'" + ">";
-                            } else {
+                            } else if (datatype == "data:image") {
                                 div.innerHTML = "<img class='background' src='" + picFile.result + "'" + "> <img class='foreground' src='" + picFile.result + "'" + ">";
+                            } else if (datatype == "data:audio") {
+                                div.innerHTML = "<audio controls src='" + picFile.result +"'><audio>"
                             }
 
                             output.insertBefore(div, null);

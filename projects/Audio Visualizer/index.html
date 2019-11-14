@@ -25,15 +25,14 @@
         }
         window.SetVolume = function (val) {
             var player = document.getElementById('audio');
-            console.log('Before: ' + player.volume);
             player.volume = val / 100;
-            console.log('After: ' + player.volume);
         }
     </script>
 </head>
 
 <body>
-    <input type="file" id="thefile" accept="audio/*" />
+    <div id="background"></div>
+    <input type="file" id="upload" accept="audio/*" />
     <div id="content">
         <canvas id="canvas"></canvas>
         <audio id="audio" controls></audio>

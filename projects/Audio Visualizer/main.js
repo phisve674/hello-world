@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    var file = document.getElementById("thefile");
+    var file = document.getElementById("upload");
     var audio = document.getElementById("audio");
     var container = document.getElementById("container");
     audio.volume=0.5;
