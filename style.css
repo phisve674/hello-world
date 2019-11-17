@@ -201,7 +201,8 @@ hr {
     transform: translate(0px, -178px);
     text-align: center;
     color: white;
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity .25s;
 }
 #grid-container img {
     height: 100%;
@@ -213,13 +214,17 @@ hr {
     cursor: pointer;
 }
 
+.grid-item img {
+    transition: filter .25s;
+}
+
 .grid-item:hover img {
     filter: brightness(50%);
     cursor: pointer;
 }
 
 .grid-item:hover p {
-    visibility: visible;
+    opacity: 1;
 }
 
 .header-container {
@@ -274,7 +279,7 @@ button {
     display: flex;
     align-items: center;
     border: none;
-    background: gray;
+    background: rgb(32,32,32);
     border-radius: 5px;
     height: 64px;
     width: 250px;

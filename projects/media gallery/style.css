@@ -60,7 +60,8 @@ a {
     transform: translate(0px, -178px);
     text-align: center;
     color: white;
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity .25s;
 }
 
 a {
@@ -71,13 +72,17 @@ a {
     cursor: pointer;
 }
 
+.grid-item img {
+    transition: filter .25s;
+}
+
 .grid-item:hover img {
     filter: brightness(65%);
     cursor: pointer;
 }
 
 .grid-item:hover p {
-    visibility: visible;
+    opacity: 1;
 }
 
 @media screen and (max-width: 1325px) {
@@ -111,7 +116,7 @@ a {
     }
 
     .grid-item p {
-        visibility: visible;
+        opacity: 1;
         text-shadow: black 0 0 10px;
         transform: translate(12px, -50px);
         text-align: start;
