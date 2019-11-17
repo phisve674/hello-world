@@ -1,52 +1,184 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="theme-color" content="#202020">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Welcome to my website!</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function () {
+            window.currentElement = document.getElementById("content-home");
+            window.currentListItem = document.getElementById("navbar-home");
+            currentListItem.classList.add("bold");
+        }
+
+        function navbar(navbarItem) {
+            currentElement.classList.add("transition-out");
+            currentElement.classList.remove("transition-in");
+
+            setTimeout(function () {
+                var navbarElement = document.getElementById("content-" + navbarItem);
+                var navbarElements = document.getElementsByClassName("content");
+
+                for (i = 0; i < navbarElements.length; i++) {
+                    navbarElements[i].style.display = "none";
+                    navbarElements[i].classList.add("transition-out");
+                }
+
+                navbarElement.style.display = "block";
+
+                currentElement = navbarElement;
+
+                setTimeout(function () {
+                    navbarElement.classList.add("transition-in");
+
+                    currentListItem.classList.remove("bold");
+                    currentListItem = document.getElementById("navbar-" + navbarItem);
+                    currentListItem.classList.add("bold");
+                }, 250);
+            }, 250);
+        }
+
+        var displayed = true;
+
+        function displayNavbar() {
+            var navbar = document.getElementById("navbar");
+            if (displayed == true) {
+                navbar.style.marginLeft = "0";
+                displayed = false;
+            } else {
+                navbar.style.marginLeft = "-300px";
+                displayed = true;
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <div id="wrapper">
-        <ul id="sidebar">
-            <a href="/index.html">
-                <li class="sidebar_item">
-                    <img class="icon" src="/img/icon/home.png">
+    <div id="navbar">
+        <div id="navbar-top">
+            <ul id="navbar-list">
+                <li class="navbar-item" id="navbar-home" onclick="navbar('home')">
                     <p>Home</p>
                 </li>
-            </a>
-            <a href="/projects/projects.html">
-                <li class="sidebar_item">
-                    <img class="icon" src="/img/icon/light-bulb.png">
+                <li class="navbar-item" id="navbar-projects" onclick="navbar('projects')">
                     <p>Projects</p>
                 </li>
-            </a>
-            <a href="/downloads/downloads.html">
-                <li class="sidebar_item">
-                    <img class="icon" src="/img/icon/downloads.png">
+                <li class="navbar-item" id="navbar-downloads" onclick="navbar('downloads')">
                     <p>Downloads</p>
                 </li>
-            </a>
-            <a href="http://epikraft.ddns.net:8088/">
-                <li class="sidebar_item">
-                    <img class="icon" src="/img/icon/epikraft.png">
-                    <p>Epikraft</p>
-                </li>
-            </a>
-        </ul>
-        <div id="content">
-            <div id="middle_content">
-                <h1>Welcome to my website!</h1>
-                <p>Here you can find some of my projects made with html, css and javascript as well as some download links and a link to a website me and a friend made for our minecraft-server.</p>
+            </ul>
+            <hr>
+            <div id="navbar-socials">
+                <p>Links</p>
+                <ul id="navbar-socials-buttons">
+                    <a href="http://epikraft.ddns.net:8088/" id="epikraft" title="Epikraft" target="_blank"></a>
+                    <a href="https://github.com/dyyynamic" id="github" title="Github" target="_blank"></a>
+                    <a href="https://www.reddit.com/user/DyNamicSoulZz" id="reddit" title="Reddit" target="_blank"></a>
+                </ul>
             </div>
-            <div id="bottom_content">
-                <p>Background art by <a href="https://www.artstation.com/aenamiart">Alena Aenami</a>.</p>
+        </div>
+        <div id="navbar-bottom">
+            <p>Background art by <a href="https://www.artstation.com/denko" title="Marek Denko" target="_blank">Marek
+                    Denko</a></p>
+        </div>
+    </div>
+    <div id="content-box">
+        <div class="content" id="content-home">
+            <h1>Welcome to my website!</h1>
+            <p>Here you can find some of my projects made with html, css and javascript as well as some download links
+                and a link to a website me and a friend made for our minecraft-server.</p>
+        </div>
+        <div class="content" id="content-projects">
+            <div class="header-container">
+                <div class="header">
+                    <h1>Projects</h1>
+                    <p>Some of my projects made with html, css and javascript. Most of these are unfinished because they
+                        where made just to play around with.</p>
+                </div>
+            </div>
+            <div id="grid-container">
+                <div class="grid-item">
+                    <a href="projects/animated text/index.html">
+                        <img src="img/projects/1.jpg">
+                        <p>Animated Text</p>
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="projects/dual twitch/index.html">
+                        <img src="img/projects/2.jpg">
+                        <p>Dual Twitch</p>
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="projects/media gallery/index.html">
+                        <img src="img/projects/3.jpg">
+                        <p>Media Gallery</p>
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="projects/media viewer 2/index.html">
+                        <img src="img/projects/4.jpg">
+                        <p>Media Viewer</p>
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="projects/sandbox/index.html">
+                        <img src="img/projects/5.jpg">
+                        <p>Sandbox</p>
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="projects/sandbox 2/index.html">
+                        <img src="img/projects/6.jpg">
+                        <p>Sandbox 2</p>
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="projects/Audio Visualizer/index.html">
+                        <img src="img/projects/7.jpg">
+                        <p>Audio Visualizer</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="content-downloads">
+            <div class="header-container">
+                <div class="header">
+                    <h1>Downloads</h1>
+                    <p>Download links for my Media Viewer web-app made with Electron and my osu!mania skin.</p>
+                </div>
+            </div>
+            <div id="downloads-container">
+                <div class="downloads-grid-item">
+                    <h2>Media Viewer</h2>
+                    <p>My Media Viewer website made into a web-app executable. Only availible for windows at the
+                        moment.</p>
+                </div>
+                <div class="downloads-grid-item downloads-grid-button">
+                    <a href="downloads/media-viewer.zip" download>
+                        <button type="button">
+                            <p>Download (.zip)</p>
+                            <img class="download-icon" src="img/icons/download.png">
+                        </button>
+                    </a>
+                </div>
+                <div class="downloads-grid-item">
+                    <h2>osu!mania skin</h2>
+                    <p>Lightweight version of my osu!mania skin incase I need it when I'm not at my PC.</p>
+                </div>
+                <div class="downloads-grid-item downloads-grid-button">
+                    <a href="downloads/osu!mania skin.osk" download>
+                        <button type="button">
+                            <p>Download (.osk)</p>
+                            <img class="download-icon" src="img/icons/download.png">
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+    <div id="hamburger-menu" onclick="displayNavbar()"></div>
 </body>
 
 </html>
