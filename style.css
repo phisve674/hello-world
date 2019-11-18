@@ -4,30 +4,16 @@ html, body {
     font-family: arial;
 }
 
-body:before {
-    content: "";
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-    background: url(img/bg.jpg) no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 body {
     display: flex;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+#bg-container {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: url("img/bg.jpg") center;
+    background-size: cover;
 }
 
 p, a, h1, h2 {
@@ -47,54 +33,46 @@ hr {
     z-index: 1;
     position: fixed;
     background: rgb(32,32,32);
+    height: 100vh;
+    width: 150px;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+
+#navbar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
     height: 100%;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-#navbar-top {
-    width: 50%;
-    height: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#navbar-bottom {
-    width: 50%;
-    height: 15%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#navbar-bottom p {
+#navbar-list {
+    list-style-type: none;
     margin: 0;
+    padding: 0;
 }
 
-.navbar-item {
+.navbar-list-item {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
 
-.navbar-item:hover {
+.navbar-list-item:hover {
     cursor: pointer;
 }
 
-.navbar-item p {
+.navbar-list-item p {
     font-size: 25px;
     margin-bottom: 35px;
 }
 
-#navbar-socials-buttons {
+#navbar-socials {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 115px;
+    grid-template-columns: repeat(4, 1fr);
 }
 
-#navbar-socials-buttons a {
+#navbar-socials a {
     height: 20px;
     width: 20px;
     background-size: cover;
@@ -109,8 +87,8 @@ hr {
     background: url(img/icons/github.png);
 }
 
-#reddit {
-    background: url(img/icons/reddit.png);
+#artstation {
+    background: url(img/icons/artstation.png);
 }
 
 #content-box {
@@ -183,48 +161,32 @@ hr {
 }
 
 #grid-container {
-    width: 1275px;
+    width: 1230px;
     margin: auto;
-    margin-top: 45px;
     margin-bottom: 25px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
 .grid-item {
-    height: 300px;
-    width: 300px;
+    height: 280px;
+    width: 280px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
 }
 
 .grid-item p {
-    transform: translate(0px, -178px);
-    text-align: center;
-    color: white;
-    opacity: 0;
-    transition: opacity .25s;
-}
-#grid-container img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.grid-item:hover {
-    cursor: pointer;
+    font-size: 16px;
 }
 
 .grid-item img {
+    width: 100%;
     transition: filter .25s;
 }
 
 .grid-item:hover img {
     filter: brightness(50%);
-    cursor: pointer;
-}
-
-.grid-item:hover p {
-    opacity: 1;
 }
 
 .header-container {
@@ -302,7 +264,7 @@ button:focus {
 
 /* media queries */
 
-@media screen and (max-width: 1620px) and (hover: hover) {
+@media screen and (max-width: 1550px) and (hover: hover) {
     .header-container {
         display: grid;
         grid-template-columns: 1fr 65% 1fr;
@@ -310,11 +272,11 @@ button:focus {
 
     #grid-container {
         grid-template-columns: 1fr 1fr 1fr;
-        width: 950px;
+        width: 920px;
     }
 }
 
-@media screen and (max-width: 1300px) and (hover: hover) {
+@media screen and (max-width: 1240px) and (hover: hover) {
     .header-container {
         display: grid;
         grid-template-columns: 1fr 72.5% 1fr;
@@ -322,7 +284,7 @@ button:focus {
 
     #grid-container {
         grid-template-columns: 1fr 1fr;
-        width: 625px;
+        width: 610px;
     }
 
     #downloads-container {
@@ -339,7 +301,7 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 975px) and (hover: hover) {
+@media screen and (max-width: 930px) and (hover: hover) {
     .header-container {
         display: grid;
         grid-template-columns: 1fr 80% 1fr;
@@ -359,7 +321,7 @@ button:focus {
 
     #grid-container {
         grid-template-columns: 1fr 1fr 1fr;
-        width: 950px;
+        width: 920px;
     }
 }
 
@@ -371,7 +333,7 @@ button:focus {
 
     #grid-container {
         grid-template-columns: 1fr 1fr;
-        width: 625px;
+        width: 610px;
     }
 
     #downloads-container {
@@ -419,11 +381,13 @@ button:focus {
         filter: brightness(100%);
     }
 
-    .grid-item:hover p {
-        visibility: hidden;
-    }
-
     button:hover {
-        background: gray;
+        background: rgb(32,32,32);
+    }
+}
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) and (hover: none) { 
+    .selector:not(*:root), #navbar-content {
+        height: calc(100vh - 56px);
     }
 }

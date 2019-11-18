@@ -5,86 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to my website!</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script>
-        window.onload = function () {
-            window.currentElement = document.getElementById("content-home");
-            window.currentListItem = document.getElementById("navbar-home");
-            window.navbar = document.getElementById("navbar");
-            window.displayed = false;
-            currentListItem.classList.add("bold");
-        }
-
-        function navbarFunction(navbarItem) {
-            currentElement.classList.add("transition-out");
-            currentElement.classList.remove("transition-in");
-
-            if (displayed == true) {
-                navbar.style.marginLeft = "-300px";
-                displayed = false;
-            }
-
-            setTimeout(function () {
-                var navbarElement = document.getElementById("content-" + navbarItem);
-                var navbarElements = document.getElementsByClassName("content");
-
-                for (i = 0; i < navbarElements.length; i++) {
-                    navbarElements[i].style.display = "none";
-                    navbarElements[i].classList.add("transition-out");
-                }
-
-                navbarElement.style.display = "block";
-
-                currentElement = navbarElement;
-
-                setTimeout(function () {
-                    navbarElement.classList.add("transition-in");
-
-                    currentListItem.classList.remove("bold");
-                    currentListItem = document.getElementById("navbar-" + navbarItem);
-                    currentListItem.classList.add("bold");
-                }, 250);
-            }, 250);
-        }
-
-        function displayNavbar() {
-            if (displayed == false) {
-                navbar.style.marginLeft = "0";
-                displayed = true;
-            } else {
-                navbar.style.marginLeft = "-300px";
-                displayed = false;
-            }
-        }
-    </script>
+    <script src="main.js"></script>
 </head>
 
 <body>
+    <div id="bg-container"></div>
     <div id="navbar">
-        <div id="navbar-top">
+        <div id="navbar-content">
             <ul id="navbar-list">
-                <li class="navbar-item" id="navbar-home" onclick="navbarFunction('home')">
+                <li class="navbar-list-item" id="navbar-home" onclick="navbarFunction('home')">
                     <p>Home</p>
                 </li>
-                <li class="navbar-item" id="navbar-projects" onclick="navbarFunction('projects')">
+                <li class="navbar-list-item" id="navbar-projects" onclick="navbarFunction('projects')">
                     <p>Projects</p>
                 </li>
-                <li class="navbar-item" id="navbar-downloads" onclick="navbarFunction('downloads')">
+                <li class="navbar-list-item" id="navbar-downloads" onclick="navbarFunction('downloads')">
                     <p>Downloads</p>
                 </li>
             </ul>
             <hr>
+            <p>Links</p>
             <div id="navbar-socials">
-                <p>Links</p>
-                <ul id="navbar-socials-buttons">
-                    <a href="http://epikraft.ddns.net:8088/" id="epikraft" title="Epikraft" target="_blank"></a>
-                    <a href="https://github.com/phisve674" id="github" title="Github" target="_blank"></a>
-                    <a href="https://www.reddit.com/user/DyNamicSoulZz" id="reddit" title="Reddit" target="_blank"></a>
-                </ul>
+                <a href="http://epikraft.ddns.net:8088/" id="epikraft" title="Epikraft" target="_blank"></a>
+                <a href="https://github.com/phisve674" id="github" title="My Github" target="_blank"></a>
+                <a href="https://www.artstation.com/artwork/WxAYJ" id="artstation" title="Background Art"
+                    target="_blank"></a>
             </div>
-        </div>
-        <div id="navbar-bottom">
-            <p>Background art by <a href="https://www.artstation.com/denko" title="Marek Denko" target="_blank">Marek
-                    Denko</a></p>
         </div>
     </div>
     <div id="content-box">
@@ -102,48 +48,56 @@
                 </div>
             </div>
             <div id="grid-container">
-                <div class="grid-item">
-                    <a href="projects/animated text/index.html">
+                <a href="projects/animated text/index.html">
+                    <div class="grid-item">
                         <img src="img/projects/1.jpg">
-                        <p>Animated Text</p>
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <a href="projects/multi twitch/index.html">
+                        <h2>Animated Text</h2>
+                        <p>Just some animated rainbow text on a black background.</p>
+                    </div>
+                </a>
+                <a href="projects/multi twitch/index.html">
+                    <div class="grid-item">
                         <img src="img/projects/2.jpg">
-                        <p>Multi Twitch</p>
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <a href="projects/media gallery/index.html">
+                        <h2>Multi Twitch</h2>
+                        <p>A website for viewing multiple Twitch livestreams at the same time.</p>
+                    </div>
+                </a>
+                <a href="projects/media gallery/index.html">
+                    <div class="grid-item">
                         <img src="img/projects/3.jpg">
-                        <p>Media Gallery</p>
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <a href="projects/media viewer 2/index.html">
+                        <h2>Media Gallery</h2>
+                        <p>A gallery of images made by the amazing artist Alena Aenami.</p>
+                    </div>
+                </a>
+                <a href="projects/media viewer 2/index.html">
+                    <div class="grid-item">
                         <img src="img/projects/4.jpg">
-                        <p>Media Viewer</p>
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <a href="projects/sandbox/index.html">
+                        <h2>Media Viewer</h2>
+                        <p>A website where you can upload one or more images and/or videos and view them as an album.
+                        </p>
+                    </div>
+                </a>
+                <a href="projects/sandbox/index.html">
+                    <div class="grid-item">
                         <img src="img/projects/5.jpg">
-                        <p>Sandbox</p>
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <a href="projects/sandbox 2/index.html">
+                        <h2>Sandbox</h2>
+                        <p>Just a website made for testing purposes.</p>
+                    </div>
+                </a>
+                <a href="projects/sandbox 2/index.html">
+                    <div class="grid-item">
                         <img src="img/projects/6.jpg">
-                        <p>Sandbox 2</p>
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <a href="projects/Audio Visualizer/index.html">
+                        <h2>Sandbox 2</h2>
+                        <p>Another website purely made for testing purposes.</p>
+                    </div>
+                </a>
+                <a href="projects/Audio Visualizer/index.html">
+                    <div class="grid-item">
                         <img src="img/projects/7.jpg">
-                        <p>Audio Visualizer</p>
-                    </a>
-                </div>
+                        <h2>Audio Visualizer</h2>
+                        <p>A website where you can upload an audio file and see it visualized.</p>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="content" id="content-downloads">
