@@ -387,7 +387,7 @@ button:focus {
 }
 
 @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) and (hover: none) { 
-    .selector:not(*:root), #navbar-content {
+    #navbar-content {
         height: calc(100vh - 56px);
     }
 }
