@@ -12,8 +12,10 @@ body {
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background: url("img/bg.jpg") center;
+    background: url(img/bg.png);
     background-size: cover;
+    background-position: center;
+    filter: brightness(0.75);
 }
 
 p, a, h1, h2 {
@@ -32,7 +34,7 @@ hr {
 #navbar {
     z-index: 1;
     position: fixed;
-    background: rgb(32,32,32);
+    background: rgba(32,32,32);
     height: 100vh;
     width: 150px;
     padding-left: 75px;
@@ -76,7 +78,6 @@ hr {
     height: 20px;
     width: 20px;
     background-size: cover;
-    filter: contrast(0) brightness(100);
 }
 
 #epikraft {
@@ -87,8 +88,8 @@ hr {
     background: url(img/icons/github.png);
 }
 
-#artstation {
-    background: url(img/icons/artstation.png);
+#reddit {
+    background: url(img/icons/reddit.png);
 }
 
 #content-box {
@@ -161,23 +162,25 @@ hr {
 }
 
 #grid-container {
-    width: 1230px;
-    margin: auto;
+    max-width: 1210px;
+    width: calc(100vw - 320px);
     margin-bottom: 25px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    margin: auto;
+    margin-bottom: 10px;
 }
 
 .grid-item {
-    height: 280px;
-    width: 280px;
     background: rgba(0,0,0,0.5);
     padding: 10px;
+    text-align: center;
 }
 
 .grid-item p {
-    font-size: 16px;
+    min-height: 70px;
+    margin-bottom: 15px;
 }
 
 .grid-item img {
@@ -264,19 +267,7 @@ button:focus {
 
 /* media queries */
 
-@media screen and (max-width: 1550px) and (hover: hover) {
-    .header-container {
-        display: grid;
-        grid-template-columns: 1fr 65% 1fr;
-    }
-
-    #grid-container {
-        grid-template-columns: 1fr 1fr 1fr;
-        width: 920px;
-    }
-}
-
-@media screen and (max-width: 1240px) and (hover: hover) {
+@media screen and (max-width: 1200px) and (hover: hover) {
     .header-container {
         display: grid;
         grid-template-columns: 1fr 72.5% 1fr;
@@ -284,7 +275,6 @@ button:focus {
 
     #grid-container {
         grid-template-columns: 1fr 1fr;
-        width: 610px;
     }
 
     #downloads-container {
@@ -301,7 +291,7 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 930px) and (hover: hover) {
+@media screen and (max-width: 900px) and (hover: hover) {
     .header-container {
         display: grid;
         grid-template-columns: 1fr 80% 1fr;
@@ -309,23 +299,10 @@ button:focus {
 
     #grid-container {
         grid-template-columns: 1fr;
-        width: 300px;
     }
 }
 
-@media screen and (max-width: 1325px) and (hover: none) {
-    .header-container {
-        display: grid;
-        grid-template-columns: 1fr 65% 1fr;
-    }
-
-    #grid-container {
-        grid-template-columns: 1fr 1fr 1fr;
-        width: 920px;
-    }
-}
-
-@media screen and (max-width: 1000px) and (hover: none) {
+@media screen and (max-width: 900px) and (hover: none) {
     .header-container {
         display: grid;
         grid-template-columns: 1fr 72.5% 1fr;
@@ -333,7 +310,7 @@ button:focus {
 
     #grid-container {
         grid-template-columns: 1fr 1fr;
-        width: 610px;
+        width: calc(100vw - 20px);
     }
 
     #downloads-container {
@@ -350,7 +327,7 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 675px) and (hover: none) {
+@media screen and (max-width: 600px) and (hover: none) {
     .header-container {
         display: grid;
         grid-template-columns: 1fr 80% 1fr;
@@ -358,7 +335,7 @@ button:focus {
 
     #grid-container {
         grid-template-columns: 1fr;
-        width: 300px;
+        width: calc(100vw - 20px);
     }
 }
 
@@ -366,6 +343,10 @@ button:focus {
     #navbar {
         margin-left: -300px;
         transition: margin .25s;
+    }
+
+    #grid-container {
+        width: calc(100vw - 20px);
     }
 
     #content-box {
