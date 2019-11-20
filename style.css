@@ -15,7 +15,8 @@ body {
     background: url(img/bg.png);
     background-size: cover;
     background-position: center;
-    filter: brightness(0.75);
+    image-rendering: pixelated;
+    filter: brightness(0.85);
 }
 
 p, a, h1, h2 {
