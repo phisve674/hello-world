@@ -1,33 +1,25 @@
-var bgColorPressed = 'grey';
-var bgColorUnpressed = 'silver';
-var currentKeyboardNumber = 0;
+let bgColorPressed = 'grey';
+let bgColorUnpressed = 'silver';
+let displayed = false;
 
 window.onload = function windowOnload() {
     window.dropDownMenu = document.getElementById("dropdown-menu");
     window.currentKeyboard = document.getElementById("custom-60");
 
-    document.body.addEventListener('keydown', function (e) { keyPress(bgColorPressed, e); });
-    document.body.addEventListener('keyup', function (e) { keyPress(bgColorUnpressed, e); });
+    window.checkBox = document.getElementById("enable-dark-theme");
+    window.gridItem = document.getElementsByClassName("grid-item");
 
-    function keyPress(bgColor, e) {
-        if (e.code == 'Enter') {
-            document.getElementsByClassName(e.code)[(currentKeyboardNumber) * 2].style.background = bgColor;
-            document.getElementsByClassName(e.code)[(currentKeyboardNumber) * 2 + 1].style.background = bgColor;
-        } else if (e.code == 'Space') {
-            if (currentKeyboardNumber == 0) {
-                for (let i = 0; i < 4; i++) {
-                    document.getElementsByClassName(e.code)[i].style.background = bgColor;
-                }
-            } else {
-                document.getElementsByClassName(e.code)[currentKeyboardNumber + 2].style.background = bgColor;
-            }
-        } else {
-            document.getElementsByClassName(e.code)[currentKeyboardNumber].style.background = bgColor;
+    document.body.addEventListener('keydown', function (e) { keyPress(bgColorPressed, currentKeyboard, e); });
+    document.body.addEventListener('keyup', function (e) { keyPress(bgColorUnpressed, currentKeyboard, e); });
+}
+
+function keyPress(bgColor, currentKeyboard, e) {
+    for (let i = 0; i < currentKeyboard.children.length; i++) {
+        if (currentKeyboard.children[i].className == 'grid-item ' + e.code) {
+            currentKeyboard.children[i].style.background = bgColor;
         }
     }
 }
-
-let displayed = false;
 
 function dropdownMenu() {
     if (displayed == false) {
@@ -40,9 +32,6 @@ function dropdownMenu() {
 }
 
 function darkTheme() {
-    var checkBox = document.getElementById("enable-dark-theme");
-    var gridItem = document.getElementsByClassName("grid-item");
-
     if (checkBox.checked == true) {
         for (let i = 0; i < gridItem.length; i++) {
             bgColorPressed = 'rgb(28,28,28)';
@@ -68,26 +57,6 @@ function darkTheme() {
 
 function layout(keyboard) {
     currentKeyboard.style.display = 'none';
-    
-    if (keyboard == 'custom-60') {
-        document.getElementById("custom-60").style.display = 'grid';
-
-        currentKeyboard = document.getElementById("custom-60");
-        currentKeyboardNumber = 0;
-    } else if (keyboard == 'standard-tkl') {
-        document.getElementById("standard-tkl").style.display = 'grid';
-
-        currentKeyboard = document.getElementById("standard-tkl");
-        currentKeyboardNumber = 1;
-    } else if (keyboard == 'standard-100') {
-        document.getElementById("standard-100").style.display = 'grid';
-
-        currentKeyboard = document.getElementById("standard-100");
-        currentKeyboardNumber = 2;
-    } else {
-        document.getElementById("chromebook").style.display = 'grid';
-
-        currentKeyboard = document.getElementById("chromebook");
-        currentKeyboardNumber = 3;
-    }
+    currentKeyboard = document.getElementById(keyboard);
+    currentKeyboard.style.display = 'grid';
 }
