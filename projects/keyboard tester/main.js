@@ -14,10 +14,9 @@ window.onload = function windowOnload() {
 }
 
 function keyPress(bgColor, currentKeyboard, e) {
-    for (let i = 0; i < currentKeyboard.children.length; i++) {
-        if (currentKeyboard.children[i].className == 'grid-item ' + e.code) {
-            currentKeyboard.children[i].style.background = bgColor;
-        }
+    let key = currentKeyboard.getElementsByClassName(e.code);
+    for (let i = 0; i < key.length; i++) {
+        key[i].style.background = bgColor;
     }
 }
 
@@ -31,27 +30,23 @@ function dropdownMenu() {
     }
 }
 
-function darkTheme() {
+function changeTheme() {
     if (checkBox.checked == true) {
-        for (let i = 0; i < gridItem.length; i++) {
-            bgColorPressed = 'rgb(28,28,28)';
-            bgColorUnpressed = 'rgb(40,40,40)';
-
-            gridItem[i].style.color = 'white';
-            gridItem[i].style.background = bgColorUnpressed;
-
-            document.getElementsByTagName("BODY")[0].style.background = 'rgb(16,16,16)';
-        }
+        theme('rgb(28,28,28)', 'rgb(40,40,40)', 'white', 'rgb(16, 16, 16)');
     } else {
-        for (let i = 0; i < gridItem.length; i++) {
-            bgColorPressed = 'grey';
-            bgColorUnpressed = 'silver';
+        theme('grey', 'silver', 'black', 'white');
+    }
+}
 
-            gridItem[i].style.color = 'black';
-            gridItem[i].style.background = bgColorUnpressed;
+function theme(pressed, unpressed, text, background) {
+    for (let i = 0; i < gridItem.length; i++) {
+        bgColorPressed = pressed;
+        bgColorUnpressed = unpressed;
 
-            document.getElementsByTagName("BODY")[0].style.background = 'white';
-        }
+        gridItem[i].style.color = text;
+        gridItem[i].style.background = bgColorUnpressed;
+
+        document.getElementsByTagName("body")[0].style.background = background;
     }
 }
 
