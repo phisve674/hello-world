@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav class="shown">
         <ul id="navbar-list">
             <li id="navbar-home" onclick="navbarFunction('home')">
                 <p>Home</p>
@@ -108,7 +108,8 @@
             </header>
         </div>
     </main>
-    <div id="hamburger-menu" onclick="displayNavbar()"></div>
+    <div class="hamburger-menu" id="open" onclick="displayNavbar()"></div>
+    <div class="hamburger-menu" id="close" onclick="displayNavbar()"></div>
     <script src="main.js"></script>
 </body>
 

@@ -1,7 +1,9 @@
 let currentElement = document.querySelector("#content-home");
 let currentListItem = document.querySelector("#navbar-home");
 const navbar = document.querySelector("nav");
-let displayed = false;
+const open = document.querySelector("#open");
+const close = document.querySelector("#close");
+let displayed = true;
 currentListItem.classList.add("bold");
 /*
 let animate = document.querySelector(".animate");
@@ -18,7 +20,7 @@ function navbarFunction(navbarItem) {
     currentElement.classList.remove("visible");
 
     if (displayed == true) {
-        navbar.style.marginLeft = "-300px";
+        navbar.classList.remove = "shown";
         displayed = false;
     }
 
@@ -48,10 +50,20 @@ function navbarFunction(navbarItem) {
 
 function displayNavbar() {
     if (displayed == false) {
-        navbar.style.marginLeft = "0";
+        navbar.classList.add("shown");
+        open.style.transform = "rotate(0)";
+        open.style.opacity = "1";
+
+        close.style.transform = "rotate(0)";
+        close.style.opacity = "0";
         displayed = true;
     } else {
-        navbar.style.marginLeft = "-300px";
+        navbar.classList.remove("shown");
+        open.style.transform = "rotate(90deg)";
+        open.style.opacity = "0";
+
+        close.style.transform = "rotate(90deg)";
+        close.style.opacity = "1";
         displayed = false;
     }
 }
