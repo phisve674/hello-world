@@ -1,0 +1,115 @@
+<!--
+    * Lägg till en transition när man går in på sidan. [ ]
+    * Ändra alla document.getElement till document.querySelector. [X]
+    * Fundera på att byta ".transition-in" till endast "visible". [X]
+    * Fundera på att ändra bakgrund och i så fall byt länk till bakgrund-source. [X]
+    * Fixa hamburgarmeny till mobile. [X]
+    * Mobile media-queries [ ]
+    * Fixa background så att den inte scrollar med sidan. [ ]
+    * Ta bort gamla ikoner så som reddit-ikonen [ ]
+
+    Till diskussion:
+    * Fråga om sid-transition.
+    * Fråga om man måste använda js-libraries.
+-->
+
+<!DOCTYPE html>
+<html lang="en-SE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to my website!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul id="navbar-list">
+            <li id="navbar-home" onclick="navbarFunction('home')">
+                <p>Home</p>
+            </li>
+            <li id="navbar-projects" onclick="navbarFunction('projects')">
+                <p>Projects</p>
+            </li>
+            <li id="navbar-downloads" onclick="navbarFunction('downloads')">
+                <p>Downloads</p>
+            </li>
+        </ul>
+        <hr>
+        <p>Links</p>
+        <ul id="navbar-links">
+            <li><a href="http://epikraft.ddns.net:8088/" id="epikraft" title="Epikraft" target="_blank"><img
+                        src="assets/images/icons/epikraft.png"></a></li>
+            <li><a href="https://github.com/phisve674" id="github" title="My Github" target="_blank"><img
+                        src="assets/images/icons/github.png"></a></li>
+            <li><a href="https://www.pexels.com/photo/landscape-photo-of-mountain-with-polar-lights-1434608/" id="reddit"
+                    title="Background Art" target="_blank"><img src="assets/images/icons/pexels.png"></a></li>
+        </ul>
+    </nav>
+    <main id="main">
+        <div class="content visible" id="content-home" style="display: flex;">
+            <header>
+                <h1>Welcome to my website!</h1>
+                <p>Here you can find some of my projects made with html, css and javascript, some download links
+                    as well as other various links.</p>
+            </header>
+        </div>
+        <div class="content invisible" id="content-projects" style="display: none;">
+            <header>
+                <h1>Projects</h1>
+                <p>Some of my projects made with html, css and javascript. Most of these are unfinished because
+                    they
+                    where made just to play around with.</p>
+            </header>
+            <main class="content-main">
+                <a href="#">
+                    <article>
+                        <img src="assets/images/projects/1.jpg">
+                        <h2>Multitwitch</h2>
+                    </article>
+                </a>
+                <a href="#">
+                    <article>
+                        <img src="assets/images/projects/2.jpg">
+                        <h2>Media Gallery</h2>
+                    </article>
+                </a>
+                <a href="#">
+                    <article>
+                        <img src="assets/images/projects/3.jpg">
+                        <h2>Media Viewer</h2>
+                    </article>
+                </a>
+                <a href="#">
+                    <article>
+                        <img src="assets/images/projects/4.jpg">
+                        <h2>Audio Visualizer</h2>
+                    </article>
+                </a>
+                <a href="#">
+                    <article>
+                        <img src="assets/images/projects/5.jpg">
+                        <h2>Keyboard Tester</h2>
+                    </article>
+                </a>
+                <a href="#">
+                    <article>
+                        <img src="assets/images/projects/6.jpg">
+                        <h2>YouTube Mobile Player</h2>
+                    </article>
+                </a>
+            </main>
+        </div>
+        <div class="content invisible" id="content-downloads" style="display: none;">
+            <header>
+                <h1>Downloads</h1>
+                <p>Download links for my Media Viewer web-app made with Electron and my osu!mania skin.</p>
+            </header>
+        </div>
+    </main>
+    <div id="hamburger-menu" onclick="displayNavbar()"></div>
+    <script src="main.js"></script>
+</body>
+
+</html>
