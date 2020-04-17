@@ -6,11 +6,16 @@ html, body {
 }
 
 body {
+    height: auto;
     background: url(assets/images/bg.jpg), rgba(0, 0, 0, 0.15);
     background-blend-mode: darken;
     background-size: cover;
     background-position: center;
-    /* image-rendering: pixelated; */
+    background-attachment: fixed;
+}
+
+::selection {
+    background: plum;
 }
 
 p, a, h1, h2 {
@@ -87,6 +92,7 @@ nav {
 
 #content-home {
     justify-content: center;
+    height: 100vh;
 }
 
 header {
@@ -96,6 +102,7 @@ header {
 }
 
 .content-main {
+    max-width: 1620px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
@@ -105,27 +112,47 @@ header {
 article {
     display: grid;
     height: 300px;
+    overflow: hidden;
 }
 
 article:hover img {
     filter: brightness(0.5);
 }
 
+article:hover .text {
+    height: calc(100% - 20px) !important;
+}
+
 article img {
     object-fit: cover;
-    filter: brightness(.75);
     height: 100%;
     width: 100%;
     grid-area: 1 / 1;
     transition: filter .25s;
 }
 
-article h2 {
+article .text {
     stroke: black 1px 1px;
     z-index: 1;
     margin: 10px;
     display: flex;
-    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    grid-area: 1 / 1;
+    transition: height .5s;
+}
+
+article .text p, article .text h2 {
+    margin: 0;
+}
+
+article .text h2 {
+    margin-bottom: 10px;
+}
+
+article .gradient {
+    z-index: 1;
+    background: linear-gradient(transparent 50%, rgba(0,0,0,0.5));
     grid-area: 1 / 1;
 }
 

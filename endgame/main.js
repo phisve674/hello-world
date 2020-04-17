@@ -1,10 +1,15 @@
-let currentElement = document.querySelector("#content-home");
-let currentListItem = document.querySelector("#navbar-home");
 const navbar = document.querySelector("nav");
 const open = document.querySelector("#open");
 const close = document.querySelector("#close");
+const text = document.querySelectorAll(".text");
+const p = document.querySelectorAll(".text p");
+
+let currentElement = document.querySelector("#content-home");
+let currentListItem = document.querySelector("#navbar-home");
 let displayed = true;
+
 currentListItem.classList.add("bold");
+
 /*
 let animate = document.querySelector(".animate");
 
@@ -15,6 +20,20 @@ for (let i = 0; i < animate.length; i++) {
     }, 150*(i+1));
 }
 */
+
+window.addEventListener("resize", () => {
+    updateHeight();
+});
+
+window.addEventListener("load", () => {
+});
+
+function updateHeight() {
+    for (let i = 0; i < p.length; i++) {
+        text[i].style.height = "calc(100% + " + (p[i].offsetHeight - 8) + "px)";
+    }
+}
+
 function navbarFunction(navbarItem) {
     currentElement.classList.add("invisible");
     currentElement.classList.remove("visible");
@@ -41,6 +60,8 @@ function navbarFunction(navbarItem) {
             currentListItem.classList.remove("bold");
             currentListItem = document.querySelector("#navbar-" + navbarItem);
             currentListItem.classList.add("bold");
+
+            updateHeight();
         }, 250);
     }, 250);
 }

@@ -1,0 +1,224 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: arial;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#custom-60 {
+    font-size: 1.5vw;
+    width: 90vw;
+    height: 30vw;
+    gap: 0.5vw;
+    display: grid;
+    grid-template-columns: repeat(60, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+    "a01 a01 a01 a01 a02 a02 a02 a02 a03 a03 a03 a03 a04 a04 a04 a04 a05 a05 a05 a05 a06 a06 a06 a06 a07 a07 a07 a07 a08 a08 a08 a08 a09 a09 a09 a09 a10 a10 a10 a10 a11 a11 a11 a11 a12 a12 a12 a12 a13 a13 a13 a13 a14 a14 a14 a14 a14 a14 a14 a14"
+    "a15 a15 a15 a15 a15 a15 a16 a16 a16 a16 a17 a17 a17 a17 a18 a18 a18 a18 a19 a19 a19 a19 a20 a20 a20 a20 a21 a21 a21 a21 a22 a22 a22 a22 a23 a23 a23 a23 a24 a24 a24 a24 a25 a25 a25 a25 a26 a26 a26 a26 a27 a27 a27 a27 a28 a28 a28 a28 a28 a28"
+    "a29 a29 a29 a29 a29 a29 a29 a30 a30 a30 a30 a31 a31 a31 a31 a32 a32 a32 a32 a33 a33 a33 a33 a34 a34 a34 a34 a35 a35 a35 a35 a36 a36 a36 a36 a37 a37 a37 a37 a38 a38 a38 a38 a39 a39 a39 a39 a40 a40 a40 a40 a41 a41 a41 a41 a42 a42 a42 a42 a42"
+    "a43 a43 a43 a43 a43 a44 a44 a44 a44 a45 a45 a45 a45 a46 a46 a46 a46 a47 a47 a47 a47 a48 a48 a48 a48 a49 a49 a49 a49 a50 a50 a50 a50 a51 a51 a51 a51 a52 a52 a52 a52 a53 a53 a53 a53 a54 a54 a54 a54 a54 a54 a54 a55 a55 a55 a55 a56 a56 a56 a56"
+    "a57 a57 a57 a57 a57 a58 a58 a58 a58 a58 a59 a59 a59 a59 a59 a60 a60 a60 a60 a60 a60 a60 a60 a60 a61 a61 a61 a61 a61 a62 a62 a62 a62 a62 a62 a62 a62 a62 a62 a62 a63 a63 a63 a63 a64 a64 a64 a64 a65 a65 a65 a65 a66 a66 a66 a66 a67 a67 a67 a67";
+}
+
+#standard-tkl {
+    font-size: 1.2vw;
+    width: 90vw;
+    height: 32vw;
+    gap: 0.4vw;
+    display: none;
+    grid-template-columns: repeat(73, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    grid-template-areas:
+    "a01 a01 a01 a01 .   .   .   .   a68 a68 a68 a68 a69 a69 a69 a69 a70 a70 a70 a70 a71 a71 a71 a71 .   .   a72 a72 a72 a72 a73 a73 a73 a73 a74 a74 a74 a74 a75 a75 a75 a75 .   .   a76 a76 a76 a76 a77 a77 a77 a77 a78 a78 a78 a78 a79 a79 a79 a79 .   a85 a85 a85 a85 a86 a86 a86 a86 a87 a87 a87 a87 "
+    "a01 a01 a01 a01 .   .   .   .   a68 a68 a68 a68 a69 a69 a69 a69 a70 a70 a70 a70 a71 a71 a71 a71 .   .   a72 a72 a72 a72 a73 a73 a73 a73 a74 a74 a74 a74 a75 a75 a75 a75 .   .   a76 a76 a76 a76 a77 a77 a77 a77 a78 a78 a78 a78 a79 a79 a79 a79 .   a85 a85 a85 a85 a86 a86 a86 a86 a87 a87 a87 a87 "
+    ".   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   "
+    "a80 a80 a80 a80 a02 a02 a02 a02 a03 a03 a03 a03 a04 a04 a04 a04 a05 a05 a05 a05 a06 a06 a06 a06 a07 a07 a07 a07 a08 a08 a08 a08 a09 a09 a09 a09 a10 a10 a10 a10 a11 a11 a11 a11 a12 a12 a12 a12 a13 a13 a13 a13 a14 a14 a14 a14 a14 a14 a14 a14 .   a88 a88 a88 a88 a89 a89 a89 a89 a90 a90 a90 a90 "
+    "a80 a80 a80 a80 a02 a02 a02 a02 a03 a03 a03 a03 a04 a04 a04 a04 a05 a05 a05 a05 a06 a06 a06 a06 a07 a07 a07 a07 a08 a08 a08 a08 a09 a09 a09 a09 a10 a10 a10 a10 a11 a11 a11 a11 a12 a12 a12 a12 a13 a13 a13 a13 a14 a14 a14 a14 a14 a14 a14 a14 .   a88 a88 a88 a88 a89 a89 a89 a89 a90 a90 a90 a90 "
+    "a15 a15 a15 a15 a15 a15 a16 a16 a16 a16 a17 a17 a17 a17 a18 a18 a18 a18 a19 a19 a19 a19 a20 a20 a20 a20 a21 a21 a21 a21 a22 a22 a22 a22 a23 a23 a23 a23 a24 a24 a24 a24 a25 a25 a25 a25 a26 a26 a26 a26 a27 a27 a27 a27 a28 a28 a28 a28 a28 a28 .   a91 a91 a91 a91 a92 a92 a92 a92 a93 a93 a93 a93 "
+    "a15 a15 a15 a15 a15 a15 a16 a16 a16 a16 a17 a17 a17 a17 a18 a18 a18 a18 a19 a19 a19 a19 a20 a20 a20 a20 a21 a21 a21 a21 a22 a22 a22 a22 a23 a23 a23 a23 a24 a24 a24 a24 a25 a25 a25 a25 a26 a26 a26 a26 a27 a27 a27 a27 a28 a28 a28 a28 a28 a28 .   a91 a91 a91 a91 a92 a92 a92 a92 a93 a93 a93 a93 "
+    "a29 a29 a29 a29 a29 a29 a29 a30 a30 a30 a30 a31 a31 a31 a31 a32 a32 a32 a32 a33 a33 a33 a33 a34 a34 a34 a34 a35 a35 a35 a35 a36 a36 a36 a36 a37 a37 a37 a37 a38 a38 a38 a38 a39 a39 a39 a39 a40 a40 a40 a40 a41 a41 a41 a41 a42 a42 a42 a42 a42 .   .   .   .   .   .   .   .   .   .   .   .   .   "
+    "a29 a29 a29 a29 a29 a29 a29 a30 a30 a30 a30 a31 a31 a31 a31 a32 a32 a32 a32 a33 a33 a33 a33 a34 a34 a34 a34 a35 a35 a35 a35 a36 a36 a36 a36 a37 a37 a37 a37 a38 a38 a38 a38 a39 a39 a39 a39 a40 a40 a40 a40 a41 a41 a41 a41 a42 a42 a42 a42 a42 .   .   .   .   .   .   .   .   .   .   .   .   .   "
+    "a43 a43 a43 a43 a43 a44 a44 a44 a44 a45 a45 a45 a45 a46 a46 a46 a46 a47 a47 a47 a47 a48 a48 a48 a48 a49 a49 a49 a49 a50 a50 a50 a50 a51 a51 a51 a51 a52 a52 a52 a52 a53 a53 a53 a53 a56 a56 a56 a56 a54 a54 a54 a54 a54 a54 a54 a54 a54 a54 a54 .   .   .   .   .   a82 a82 a82 a82 .   .   .   .   "
+    "a43 a43 a43 a43 a43 a44 a44 a44 a44 a45 a45 a45 a45 a46 a46 a46 a46 a47 a47 a47 a47 a48 a48 a48 a48 a49 a49 a49 a49 a50 a50 a50 a50 a51 a51 a51 a51 a52 a52 a52 a52 a53 a53 a53 a53 a56 a56 a56 a56 a54 a54 a54 a54 a54 a54 a54 a54 a54 a54 a54 .   .   .   .   .   a82 a82 a82 a82 .   .   .   .   "
+    "a57 a57 a57 a57 a57 a58 a58 a58 a58 a58 a59 a59 a59 a59 a59 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a63 a63 a63 a63 a63 a64 a64 a64 a64 a64 a65 a65 a65 a65 a65 a66 a66 a66 a66 a66 .   a81 a81 a81 a81 a83 a83 a83 a83 a84 a84 a84 a84 "
+    "a57 a57 a57 a57 a57 a58 a58 a58 a58 a58 a59 a59 a59 a59 a59 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a63 a63 a63 a63 a63 a64 a64 a64 a64 a64 a65 a65 a65 a65 a65 a66 a66 a66 a66 a66 .   a81 a81 a81 a81 a83 a83 a83 a83 a84 a84 a84 a84 ";
+}
+
+#standard-100 {
+    font-size: 0.975vw;
+    width: 90vw;
+    height: 26vw;
+    gap: 0.325vw;
+    display: none;
+    grid-template-columns: repeat(90, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    grid-template-areas:
+    "a01 a01 a01 a01 .   .   .   .   a68 a68 a68 a68 a69 a69 a69 a69 a70 a70 a70 a70 a71 a71 a71 a71 .   .   a72 a72 a72 a72 a73 a73 a73 a73 a74 a74 a74 a74 a75 a75 a75 a75 .   .   a76 a76 a76 a76 a77 a77 a77 a77 a78 a78 a78 a78 a79 a79 a79 a79 .   a85 a85 a85 a85 a86 a86 a86 a86 a87 a87 a87 a87 .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .  "
+    "a01 a01 a01 a01 .   .   .   .   a68 a68 a68 a68 a69 a69 a69 a69 a70 a70 a70 a70 a71 a71 a71 a71 .   .   a72 a72 a72 a72 a73 a73 a73 a73 a74 a74 a74 a74 a75 a75 a75 a75 .   .   a76 a76 a76 a76 a77 a77 a77 a77 a78 a78 a78 a78 a79 a79 a79 a79 .   a85 a85 a85 a85 a86 a86 a86 a86 a87 a87 a87 a87 .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .  "
+    ".   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .  "
+    "a80 a80 a80 a80 a02 a02 a02 a02 a03 a03 a03 a03 a04 a04 a04 a04 a05 a05 a05 a05 a06 a06 a06 a06 a07 a07 a07 a07 a08 a08 a08 a08 a09 a09 a09 a09 a10 a10 a10 a10 a11 a11 a11 a11 a12 a12 a12 a12 a13 a13 a13 a13 a14 a14 a14 a14 a14 a14 a14 a14 .   a88 a88 a88 a88 a89 a89 a89 a89 a90 a90 a90 a90 .   a94 a94 a94 a94 a95 a95 a95 a95 a96 a96 a96 a96 a97 a97 a97 a97"
+    "a80 a80 a80 a80 a02 a02 a02 a02 a03 a03 a03 a03 a04 a04 a04 a04 a05 a05 a05 a05 a06 a06 a06 a06 a07 a07 a07 a07 a08 a08 a08 a08 a09 a09 a09 a09 a10 a10 a10 a10 a11 a11 a11 a11 a12 a12 a12 a12 a13 a13 a13 a13 a14 a14 a14 a14 a14 a14 a14 a14 .   a88 a88 a88 a88 a89 a89 a89 a89 a90 a90 a90 a90 .   a94 a94 a94 a94 a95 a95 a95 a95 a96 a96 a96 a96 a97 a97 a97 a97"
+    "a15 a15 a15 a15 a15 a15 a16 a16 a16 a16 a17 a17 a17 a17 a18 a18 a18 a18 a19 a19 a19 a19 a20 a20 a20 a20 a21 a21 a21 a21 a22 a22 a22 a22 a23 a23 a23 a23 a24 a24 a24 a24 a25 a25 a25 a25 a26 a26 a26 a26 a27 a27 a27 a27 a28 a28 a28 a28 a28 a28 .   a91 a91 a91 a91 a92 a92 a92 a92 a93 a93 a93 a93 .   a98 a98 a98 a98 a99 a99 a99 a99 a100 a100 a100 a100 a101 a101 a101 a101"
+    "a15 a15 a15 a15 a15 a15 a16 a16 a16 a16 a17 a17 a17 a17 a18 a18 a18 a18 a19 a19 a19 a19 a20 a20 a20 a20 a21 a21 a21 a21 a22 a22 a22 a22 a23 a23 a23 a23 a24 a24 a24 a24 a25 a25 a25 a25 a26 a26 a26 a26 a27 a27 a27 a27 a28 a28 a28 a28 a28 a28 .   a91 a91 a91 a91 a92 a92 a92 a92 a93 a93 a93 a93 .   a98 a98 a98 a98 a99 a99 a99 a99 a100 a100 a100 a100 a101 a101 a101 a101"
+    "a29 a29 a29 a29 a29 a29 a29 a30 a30 a30 a30 a31 a31 a31 a31 a32 a32 a32 a32 a33 a33 a33 a33 a34 a34 a34 a34 a35 a35 a35 a35 a36 a36 a36 a36 a37 a37 a37 a37 a38 a38 a38 a38 a39 a39 a39 a39 a40 a40 a40 a40 a41 a41 a41 a41 a42 a42 a42 a42 a42 .   .   .   .   .   .   .   .   .   .   .   .   .   .   a102 a102 a102 a102 a103 a103 a103 a103 a104 a104 a104 a104 a101 a101 a101 a101"
+    "a29 a29 a29 a29 a29 a29 a29 a30 a30 a30 a30 a31 a31 a31 a31 a32 a32 a32 a32 a33 a33 a33 a33 a34 a34 a34 a34 a35 a35 a35 a35 a36 a36 a36 a36 a37 a37 a37 a37 a38 a38 a38 a38 a39 a39 a39 a39 a40 a40 a40 a40 a41 a41 a41 a41 a42 a42 a42 a42 a42 .   .   .   .   .   .   .   .   .   .   .   .   .   .   a102 a102 a102 a102 a103 a103 a103 a103 a104 a104 a104 a104 a101 a101 a101 a101"
+    "a43 a43 a43 a43 a43 a44 a44 a44 a44 a45 a45 a45 a45 a46 a46 a46 a46 a47 a47 a47 a47 a48 a48 a48 a48 a49 a49 a49 a49 a50 a50 a50 a50 a51 a51 a51 a51 a52 a52 a52 a52 a53 a53 a53 a53 a56 a56 a56 a56 a54 a54 a54 a54 a54 a54 a54 a54 a54 a54 a54 .   .   .   .   .   a82 a82 a82 a82 .   .   .   .   .   a105 a105 a105 a105 a106 a106 a106 a106 a107 a107 a107 a107 a108 a108 a108 a108"
+    "a43 a43 a43 a43 a43 a44 a44 a44 a44 a45 a45 a45 a45 a46 a46 a46 a46 a47 a47 a47 a47 a48 a48 a48 a48 a49 a49 a49 a49 a50 a50 a50 a50 a51 a51 a51 a51 a52 a52 a52 a52 a53 a53 a53 a53 a56 a56 a56 a56 a54 a54 a54 a54 a54 a54 a54 a54 a54 a54 a54 .   .   .   .   .   a82 a82 a82 a82 .   .   .   .   .   a105 a105 a105 a105 a106 a106 a106 a106 a107 a107 a107 a107 a108 a108 a108 a108"
+    "a57 a57 a57 a57 a57 a58 a58 a58 a58 a58 a59 a59 a59 a59 a59 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a63 a63 a63 a63 a63 a64 a64 a64 a64 a64 a65 a65 a65 a65 a65 a66 a66 a66 a66 a66 .   a81 a81 a81 a81 a83 a83 a83 a83 a84 a84 a84 a84 .   a109 a109 a109 a109 a109 a109 a109 a109 a110 a110 a110 a110 a108 a108 a108 a108"
+    "a57 a57 a57 a57 a57 a58 a58 a58 a58 a58 a59 a59 a59 a59 a59 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a63 a63 a63 a63 a63 a64 a64 a64 a64 a64 a65 a65 a65 a65 a65 a66 a66 a66 a66 a66 .   a81 a81 a81 a81 a83 a83 a83 a83 a84 a84 a84 a84 .   a109 a109 a109 a109 a109 a109 a109 a109 a110 a110 a110 a110 a108 a108 a108 a108";
+}
+
+#chromebook {
+    font-size: 1.55vw;
+    width: 90vw;
+    height: 31vw;
+    gap: 0.5vw;
+    display: none;
+    grid-template-columns: repeat(58, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-areas:
+    "a01 a01 a01 a01 a02 a02 a02 a02 a03 a03 a03 a03 a04 a04 a04 a04 a05 a05 a05 a05 a06 a06 a06 a06 a07 a07 a07 a07 a08 a08 a08 a08 a09 a09 a09 a09 a10 a10 a10 a10 a11 a11 a11 a11 a12 a12 a12 a12 a13 a13 a13 a13 a14 a14 a14 a14 a14 a14"
+    "a01 a01 a01 a01 a02 a02 a02 a02 a03 a03 a03 a03 a04 a04 a04 a04 a05 a05 a05 a05 a06 a06 a06 a06 a07 a07 a07 a07 a08 a08 a08 a08 a09 a09 a09 a09 a10 a10 a10 a10 a11 a11 a11 a11 a12 a12 a12 a12 a13 a13 a13 a13 a14 a14 a14 a14 a14 a14"
+    "a15 a15 a15 a15 a15 a15 a16 a16 a16 a16 a17 a17 a17 a17 a18 a18 a18 a18 a19 a19 a19 a19 a20 a20 a20 a20 a21 a21 a21 a21 a22 a22 a22 a22 a23 a23 a23 a23 a24 a24 a24 a24 a25 a25 a25 a25 a26 a26 a26 a26 a27 a27 a27 a27 a28 a28 a28 a28"
+    "a15 a15 a15 a15 a15 a15 a16 a16 a16 a16 a17 a17 a17 a17 a18 a18 a18 a18 a19 a19 a19 a19 a20 a20 a20 a20 a21 a21 a21 a21 a22 a22 a22 a22 a23 a23 a23 a23 a24 a24 a24 a24 a25 a25 a25 a25 a26 a26 a26 a26 a27 a27 a27 a27 a28 a28 a28 a28"
+    "a29 a29 a29 a29 a29 a29 a29 a30 a30 a30 a30 a31 a31 a31 a31 a32 a32 a32 a32 a33 a33 a33 a33 a34 a34 a34 a34 a35 a35 a35 a35 a36 a36 a36 a36 a37 a37 a37 a37 a38 a38 a38 a38 a39 a39 a39 a39 a40 a40 a40 a40 a41 a41 a41 a41 a42 a42 a42"
+    "a29 a29 a29 a29 a29 a29 a29 a30 a30 a30 a30 a31 a31 a31 a31 a32 a32 a32 a32 a33 a33 a33 a33 a34 a34 a34 a34 a35 a35 a35 a35 a36 a36 a36 a36 a37 a37 a37 a37 a38 a38 a38 a38 a39 a39 a39 a39 a40 a40 a40 a40 a41 a41 a41 a41 a42 a42 a42"
+    "a43 a43 a43 a43 a43 a44 a44 a44 a44 a45 a45 a45 a45 a46 a46 a46 a46 a47 a47 a47 a47 a48 a48 a48 a48 a49 a49 a49 a49 a50 a50 a50 a50 a51 a51 a51 a51 a52 a52 a52 a52 a53 a53 a53 a53 a54 a54 a54 a54 a55 a55 a55 a55 a55 a55 a55 a55 a55"
+    "a43 a43 a43 a43 a43 a44 a44 a44 a44 a45 a45 a45 a45 a46 a46 a46 a46 a47 a47 a47 a47 a48 a48 a48 a48 a49 a49 a49 a49 a50 a50 a50 a50 a51 a51 a51 a51 a52 a52 a52 a52 a53 a53 a53 a53 a54 a54 a54 a54 a55 a55 a55 a55 a55 a55 a55 a55 a55"
+    "a57 a57 a57 a57 a57 a57 a57 a57 a59 a59 a59 a59 a59 a59 a59 a59 a59 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a61 a61 a61 a61 a61 a63 a63 a63 a63 .   .   .   .   a65 a65 a65 a65 .   .   .   .  "
+    "a57 a57 a57 a57 a57 a57 a57 a57 a59 a59 a59 a59 a59 a59 a59 a59 a59 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a60 a61 a61 a61 a61 a61 a63 a63 a63 a63 a64 a64 a64 a64 a66 a66 a66 a66 a67 a67 a67 a67";
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: silver;
+    border-radius: 0.5vw;
+}
+
+#cogwheel {
+    border: none;
+    display: block;
+    height: 24px;
+    width: 24px;
+    background: url("cogwheel.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+#cogwheel:hover {
+    cursor: pointer;
+}
+
+#cogwheel:focus {
+    outline: none;
+}
+
+#dropdown-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    display: none;
+    position: absolute;
+    top: 56px;
+    right: 6px;
+    width: 200px;
+    border-radius: 8px;
+    background: rgba(32,32,32,0.95);
+}
+
+#dropdown-menu:before {
+	content: '';
+	position: absolute;
+    right: 14px;
+	border: 8px solid transparent;
+	border-bottom-color: rgba(32,32,32,0.95);
+	border-top: 0;
+	margin-left: -8px;
+	margin-top: -8px;
+}
+
+#dropdown-menu li {
+    margin-left: 12px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+#dropdown-menu li:first-child {
+    margin-top: 12px;
+    height: 48px;
+}
+
+#dropdown-menu li:last-child {
+    margin-bottom: 12px;
+}
+
+#dropdown-menu li input {
+    margin-bottom: 4px;
+    margin-right: 6px;
+}
+
+/* Toggle Switch */
+
+.switch {
+    margin-left: auto;
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 18px;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: silver;
+    color: grey;
+    transition: background .25s;
+    border-radius: 9px;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: transform .25s;
+    border-radius: 50%;
+}
+  
+input:checked + .slider {
+    background-color: #2196F3;
+}
+  
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
