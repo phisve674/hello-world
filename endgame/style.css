@@ -194,4 +194,22 @@ span {
     .hamburger-menu {
         display: block;
     }
+
+    header {
+        width: 75vw;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .content-main {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width: 951px) and (max-width: 1260px) {
+    .content-main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

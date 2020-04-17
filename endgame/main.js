@@ -19,10 +19,7 @@ function navbarFunction(navbarItem) {
     currentElement.classList.add("invisible");
     currentElement.classList.remove("visible");
 
-    if (displayed == true) {
-        navbar.classList.remove = "shown";
-        displayed = false;
-    }
+    displayNavbar();
 
     setTimeout(() => {
         let navbarElement = document.querySelector("#content-" + navbarItem);
