@@ -3,18 +3,18 @@ const open = document.querySelector("#open");
 const close = document.querySelector("#close");
 const text = document.querySelectorAll(".text");
 const p = document.querySelectorAll(".text p");
+const project = document.querySelectorAll(".project");
 
 let currentElement = document.querySelector("#content-home");
 let currentListItem = document.querySelector("#navbar-home");
 let displayed = true;
+let update = true;
 
 currentListItem.classList.add("bold");
 
 window.addEventListener("resize", () => {
     updateHeight();
-});
-
-window.addEventListener("load", () => {
+    update = true;
 });
 
 function updateHeight() {
@@ -50,7 +50,10 @@ function navbarFunction(navbarItem) {
             currentListItem = document.querySelector("#navbar-" + navbarItem);
             currentListItem.classList.add("bold");
 
-            updateHeight();
+            if (update == true && navbarItem == "projects") {
+                updateHeight();
+                update = false;
+            }
         }, 250);
     }, 250);
 }

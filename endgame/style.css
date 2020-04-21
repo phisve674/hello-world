@@ -218,6 +218,16 @@ button:focus {
     outline: 0;
 }
 
+/* about */
+
+.text-box {
+    width: 50vw;
+}
+
+.text-box p:first-child {
+    margin-top: 0;
+}
+
 /* Javascript */
 
 .invisible {
@@ -261,11 +271,21 @@ button:focus {
     margin-left: 0;
 }
 
-.hover {
-    height: calc(100% - 20px) !important;
-}
-
 /* media queries */
+
+@media (hover: none) {
+    .project .text {
+        height: calc(100% - 20px) !important;
+    }
+
+    .project:hover img {
+        filter: brightness(1);
+    }
+    
+    button:hover {
+        background: rgb(32,32,32);
+    }
+}
 
 @media screen and (max-width: 650px) {
     .shown {
@@ -281,7 +301,7 @@ button:focus {
         display: block;
     }
 
-    header {
+    header, .text-box {
         width: 75vw;
     }
 }
