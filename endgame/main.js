@@ -10,17 +10,6 @@ let displayed = true;
 
 currentListItem.classList.add("bold");
 
-/*
-let animate = document.querySelector(".animate");
-
-for (let i = 0; i < animate.length; i++) {
-    setTimeout(() => {
-        animate[i].style.opacity = "1";
-        animate[i].style.transform = "translate(0, 0)";
-    }, 150*(i+1));
-}
-*/
-
 window.addEventListener("resize", () => {
     updateHeight();
 });

@@ -1,6 +1,5 @@
 <!--
     Att göra:
-    * Lägg till en transition när man går in på sidan. [ ]
     * Ändra alla document.getElement till document.querySelector. [X]
     * Fundera på att byta ".transition-in" till endast "visible". [X]
     * Fundera på att ändra bakgrund och i så fall byt länk till bakgrund-source. [X]
@@ -13,9 +12,12 @@
     * Lägg till fler semantiska taggar. [ ]
     * Optimera bilder. Lägg till media queries för bakgrundsbildens resulotion. [ ]
 
-    Om jag får tid över:
-    * Hitta inspiration för mer saker som kan finnas på nuvarande sidor. [ ]
-    * Lägg till fler sidor t.ex. About. [ ]
+    Ideer:
+    * Lägg till en transition när man går in på sidan.
+    * Hitta inspiration för mer saker som kan finnas på nuvarande sidor.
+    * Lägg till fler sidor t.ex. About.
+    * Lägg till en liten footer längst ner på varje sida.
+    * Gör så att bildtexten på projekt-sidan poppar upp medans man scrollar på mobile.
 
     Att göra mot slutet:
     * Ta bort onödiga kommentarer och assets och lägg till kommentarer som gör koden enklare att läsa. [ ]
@@ -30,127 +32,210 @@
 
 <!DOCTYPE html>
 <html lang="en-SE">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to my website!</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <nav class="shown">
-        <ul id="navbar-list">
-            <li id="navbar-home" onclick="navbarFunction('home')">
-                <p>Home</p>
-            </li>
-            <li id="navbar-projects" onclick="navbarFunction('projects')">
-                <p>Projects</p>
-            </li>
-            <li id="navbar-downloads" onclick="navbarFunction('downloads')">
-                <p>Downloads</p>
-            </li>
-        </ul>
-        <hr>
-        <p>Links</p>
-        <ul id="navbar-links">
-            <li><a href="http://epikraft.ddns.net:8088/" id="epikraft" title="Epikraft" target="_blank"><img
-                        src="assets/images/icons/epikraft.png"></a></li>
-            <li><a href="https://github.com/phisve674" id="github" title="My Github" target="_blank"><img
-                        src="assets/images/icons/github.png"></a></li>
-            <li><a href="https://www.pexels.com/photo/landscape-photo-of-mountain-with-polar-lights-1434608/"
-                    id="reddit" title="Background Art" target="_blank"><img src="assets/images/icons/pexels.png"></a>
-            </li>
-        </ul>
+      <ul id="navbar-list">
+        <li id="navbar-home" onclick="navbarFunction('home')">
+          <p>Home</p>
+        </li>
+        <li id="navbar-projects" onclick="navbarFunction('projects')">
+          <p>Projects</p>
+        </li>
+        <li id="navbar-downloads" onclick="navbarFunction('downloads')">
+          <p>Downloads</p>
+        </li>
+      </ul>
+      <hr />
+      <p>Links</p>
+      <ul id="navbar-links">
+        <li>
+          <a
+            href="http://epikraft.ddns.net:8088/"
+            id="epikraft"
+            title="Epikraft"
+            target="_blank"
+            ><img src="assets/images/icons/epikraft.png"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/phisve674"
+            id="github"
+            title="My Github"
+            target="_blank"
+            ><img src="assets/images/icons/github.png"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://www.pexels.com/photo/landscape-photo-of-mountain-with-polar-lights-1434608/"
+            id="reddit"
+            title="Background Art"
+            target="_blank"
+            ><img src="assets/images/icons/pexels.png"
+          /></a>
+        </li>
+      </ul>
     </nav>
-    <main id="main">
-        <div class="content visible" id="content-home" style="display: flex;">
-            <header>
-                <h1>Welcome to my website!</h1>
-                <p>Here you can find some of my projects made with html, css and javascript, some download links
-                    as well as other various links.</p>
-            </header>
-        </div>
-        <div class="content invisible" id="content-projects" style="display: none;">
-            <header>
-                <h1>Projects</h1>
-                <p>Some of my projects made with html, css and javascript. Most of these are unfinished because
-                    they
-                    where made just to play around with.</p>
-            </header>
-            <main class="content-main">
-                <a href="projects/multi twitch/index.html">
-                    <article>
-                        <img src="assets/images/projects/1.jpg">
-                        <div class="gradient"></div>
-                        <div class="text">
-                            <h2>Multitwitch</h2>
-                            <p>A website for viewing multiple Twitch livestreams at the same time.</p>
-                        </div>
-                    </article>
-                </a>
-                <a href="projects/media gallery/index.html">
-                    <article>
-                        <img src="assets/images/projects/2.jpg">
-                        <div class="gradient"></div>
-                        <div class="text">
-                            <h2>Media Gallery</h2>
-                            <p>A gallery of images made by the amazing artist Alena Aenami.</p>
-                        </div>
-                    </article>
-                </a>
-                <a href="projects/media viewer 2/index.html">
-                    <article>
-                        <img src="assets/images/projects/3.jpg">
-                        <div class="gradient"></div>
-                        <div class="text">
-                            <h2>Media Viewer</h2>
-                            <p>A website where you can upload one or more images and/or videos for viewing.</p>
-                        </div>
-                    </article>
-                </a>
-                <a href="projects/audio visualizer/index.html">
-                    <article>
-                        <img src="assets/images/projects/4.jpg">
-                        <div class="gradient"></div>
-                        <div class="text">
-                            <h2>Audio Visualizer</h2>
-                            <p>A website where you can upload an audio file and see it visualized.</p>
-                        </div>
-                    </article>
-                </a>
-                <a href="projects/keyboard tester/index.html">
-                    <article>
-                        <img src="assets/images/projects/5.jpg">
-                        <div class="gradient"></div>
-                        <div class="text">
-                            <h2>Keyboard Tester</h2>
-                            <p>A keyboard tester with support for multiple different layouts.</p>
-                        </div>
-                    </article>
-                </a>
-                <a href="projects/youtube mobile player/index.html">
-                    <article>
-                        <img src="assets/images/projects/6.jpg">
-                        <div class="gradient"></div>
-                        <div class="text">
-                            <h2>YouTube Mobile Player</h2>
-                            <p>A website for playing videos or playlists while your phone screen is turned off.</p>
-                        </div>
-                    </article>
-                </a>
-            </main>
-        </div>
-        <div class="content invisible" id="content-downloads" style="display: none;">
-            <header>
-                <h1>Downloads</h1>
-                <p>Download links for my Media Viewer web-app made with Electron and my osu!mania skin.</p>
-            </header>
-        </div>
+    <main id="content-wrapper">
+      <div class="content visible" id="content-home" style="display: flex;">
+        <header>
+          <h1>Welcome to my website!</h1>
+          <p>
+            Here you can find some of my projects made with html, css and
+            javascript, some download links as well as other various links.
+          </p>
+        </header>
+      </div>
+      <div class="content invisible" id="content-projects" style="display: none;">
+        <header>
+          <h1>Projects</h1>
+          <p>
+            Some of my projects made with html, css and javascript. Most of
+            these are unfinished because they where made just to play around
+            with.
+          </p>
+        </header>
+        <main>
+          <a href="projects/multi twitch/index.html">
+            <article class="project">
+              <img src="assets/images/projects/1.jpg" />
+              <div class="gradient"></div>
+              <div class="text">
+                <h2>Multitwitch</h2>
+                <p>
+                  A website for viewing multiple Twitch livestreams at the same
+                  time.
+                </p>
+              </div>
+            </article>
+          </a>
+          <a href="projects/media gallery/index.html">
+            <article class="project">
+              <img src="assets/images/projects/2.jpg" />
+              <div class="gradient"></div>
+              <div class="text">
+                <h2>Media Gallery</h2>
+                <p>
+                  A gallery of images made by the amazing artist Alena Aenami.
+                </p>
+              </div>
+            </article>
+          </a>
+          <a href="projects/media viewer 2/index.html">
+            <article class="project">
+              <img src="assets/images/projects/3.jpg" />
+              <div class="gradient"></div>
+              <div class="text">
+                <h2>Media Viewer</h2>
+                <p>
+                  A website where you can upload one or more images and/or
+                  videos for viewing.
+                </p>
+              </div>
+            </article>
+          </a>
+          <a href="projects/audio visualizer/index.html">
+            <article class="project">
+              <img src="assets/images/projects/4.jpg" />
+              <div class="gradient"></div>
+              <div class="text">
+                <h2>Audio Visualizer</h2>
+                <p>
+                  A website where you can upload an audio file and see it
+                  visualized.
+                </p>
+              </div>
+            </article>
+          </a>
+          <a href="projects/keyboard tester/index.html">
+            <article class="project">
+              <img src="assets/images/projects/5.jpg" />
+              <div class="gradient"></div>
+              <div class="text">
+                <h2>Keyboard Tester</h2>
+                <p>
+                  A keyboard tester with support for multiple different layouts.
+                </p>
+              </div>
+            </article>
+          </a>
+          <a href="projects/youtube mobile player/index.html">
+            <article class="project">
+              <img src="assets/images/projects/6.jpg" />
+              <div class="gradient"></div>
+              <div class="text">
+                <h2>YouTube Mobile Player</h2>
+                <p>
+                  A website for playing videos or playlists while your phone
+                  screen is turned off.
+                </p>
+              </div>
+            </article>
+          </a>
+        </main>
+      </div>
+      <div class="content invisible" id="content-downloads" style="display: none;">
+        <header>
+          <h1>Downloads</h1>
+          <p>
+            Download links for my Media Viewer web-app made with Electron and my
+            osu!mania skin.
+          </p>
+        </header>
+        <ul>
+          <li>
+            <div class="download-text-box">
+              <h2>Media Viewer</h2>
+              <p>
+                My Media Viewer website made into a web-app executable. Only
+                availible for windows at the moment.
+              </p>
+            </div>
+            <div class="download-button-box">
+              <a href="downloads/media-viewer.zip">
+                <button type="button">
+                  <p>Download (.zip)</p>
+                  <img
+                    class="download-icon"
+                    src="assets/images/icons/download.png"
+                  />
+                </button>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="download-text-box">
+              <h2>osu!mania skin</h2>
+              <p>
+                Lightweight version of my osu!mania skin incase I need it when
+                I'm not at my PC.
+              </p>
+            </div>
+            <div class="download-button-box">
+              <a href="downloads/osu!mania skin.osk">
+                <button type="button">
+                  <p>Download (.osk)</p>
+                  <img
+                    class="download-icon"
+                    src="assets/images/icons/download.png"
+                  />
+                </button>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </main>
     <div class="hamburger-menu" id="open" onclick="displayNavbar()"></div>
     <div class="hamburger-menu" id="close" onclick="displayNavbar()"></div>
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>

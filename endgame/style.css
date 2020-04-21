@@ -22,6 +22,10 @@ p, a, h1, h2 {
     color: white;
 }
 
+h1 {
+    font-size: 50px;
+}
+
 a {
     text-decoration: none;
 }
@@ -31,6 +35,8 @@ ul {
     margin: 0;
     padding: 0;
 }
+
+/* navbar */
 
 #navbar-list li {
     font-size: 25px;
@@ -44,15 +50,6 @@ ul {
 #navbar-links {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-}
-
-h1 {
-    font-size: 50px;
-}
-
-hr {
-    width: 100%;
-    border: 1px solid white;
 }
 
 nav {
@@ -69,7 +66,14 @@ nav {
     transition: margin .25s;
 }
 
-#main {
+hr {
+    width: 100%;
+    border: 1px solid white;
+}
+
+/* content */
+
+#content-wrapper {
     margin-left: 300px;
     width: calc(100% - 300px);
     height: 100%;
@@ -78,8 +82,14 @@ nav {
     align-items: center;
 }
 
-#main p {
+#content-wrapper p {
     font-size: 20px;
+}
+
+header {
+    width: 50vw;
+    margin: 50px;
+    text-align: center;
 }
 
 .content {
@@ -90,40 +100,38 @@ nav {
     flex-direction: column;
 }
 
+/* home */
+
 #content-home {
     justify-content: center;
     height: 100vh;
 }
 
-header {
-    width: 50vw;
-    margin: 50px;
-    text-align: center;
-}
+/* projects */
 
-.content-main {
-    max-width: 1620px;
+#content-projects main {
+    max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin: 25px;
 }
 
-article {
+.project {
     display: grid;
     height: 300px;
     overflow: hidden;
 }
 
-article:hover img {
+.project:hover img {
     filter: brightness(0.5);
 }
 
-article:hover .text {
+.project:hover .text {
     height: calc(100% - 20px) !important;
 }
 
-article img {
+.project img {
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -131,7 +139,7 @@ article img {
     transition: filter .25s;
 }
 
-article .text {
+.project .text {
     stroke: black 1px 1px;
     z-index: 1;
     margin: 10px;
@@ -142,28 +150,74 @@ article .text {
     transition: height .5s;
 }
 
-article .text p, article .text h2 {
+.project .text p, .project .text h2 {
     margin: 0;
 }
 
-article .text h2 {
+.project .text h2 {
     margin-bottom: 10px;
 }
 
-article .gradient {
+.project .gradient {
     z-index: 1;
     background: linear-gradient(transparent 50%, rgba(0,0,0,0.5));
     grid-area: 1 / 1;
 }
 
-/*
-span {
-    display: inline-block;
-    opacity: 0;
-    transform: translate(0, -20px);
-    transition: opacity .5s, transform .5s;
+/* downloads */
+
+#content-downloads ul {
+    max-width: 1200px;
+    margin: 25px;
 }
-*/
+
+#content-downloads ul li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.download-text-box {
+    text-align: center;
+    margin-right: 30px;
+}
+
+.download-button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: none;
+    background: rgb(32,32,32);
+    width: 250px;
+    height: 64px;
+    border-radius: 5px;
+    transition: background 0.125s;
+}
+
+button img {
+    margin-right: 8px;
+}
+
+button p {
+    margin: auto;
+}
+
+button:hover {
+    background: rgb(64,64,64);
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 0;
+}
 
 /* Javascript */
 
@@ -188,7 +242,7 @@ span {
     left: 10px;
     height: 40px;
     width: 40px;
-    transition: transform 250ms, opacity 250ms;
+    transition: transform .25s, opacity .25s;
 }
 
 .hamburger-menu:hover {
@@ -208,12 +262,14 @@ span {
     margin-left: 0;
 }
 
-@media screen and (max-width: 600px) {
+/* media queries */
+
+@media screen and (max-width: 650px) {
     .shown {
         margin-left: -300px;
     }
 
-    #main {
+    #content-wrapper {
         margin-left: 0;
         width: 100%;
     }
@@ -228,15 +284,25 @@ span {
 }
 
 @media screen and (max-width: 950px) {
-    .content-main {
+    #content-projects main {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
 @media screen and (min-width: 951px) and (max-width: 1260px) {
-    .content-main {
+    #content-projects main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    #content-downloads ul li {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+    }
+    .download-text-box {
+        margin: 0;
     }
 }
