@@ -6,7 +6,6 @@ html, body {
 }
 
 body {
-    height: auto;
     background: url(assets/images/bg_lowres.jpg), rgba(0, 0, 0, 0.15);
     background-blend-mode: darken;
     background-size: cover;
@@ -260,6 +259,10 @@ button:focus {
 
 .shown {
     margin-left: 0;
+}
+
+.hover {
+    height: calc(100% - 20px) !important;
 }
 
 /* media queries */
