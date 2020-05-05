@@ -1,0 +1,127 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#text-box {
+    height: 80px;
+    margin: 16px 0 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#text {
+    position: relative;
+    margin: 0;
+}
+
+body {
+    background: rgb(32,32,32);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapper {
+    max-width: 1200px;
+    margin: 20px;
+}
+
+#box-box {
+    border-radius: 3px;
+    color: gray;
+    padding: 20px;
+    font-size: 32px;
+    background: rgb(16,16,16);
+}
+
+#result {
+    display: none;
+    margin: 20px 0 0 0;
+    border-radius: 3px;
+    color: gray;
+    padding: 20px;
+    font-size: 32px;
+    background: rgb(16,16,16);
+}
+
+#input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#timer {
+    user-select: none;
+    text-align: center;
+    line-height: 60px;
+    color: black;
+    font-family: arial;
+    height: 60px;
+    width: 100px;
+    border-radius: 3px;
+    background: white;
+    margin-right: 10px;
+}
+
+input {
+    border: none;
+    border-radius: 3px;
+    font-size: 32px;
+    width: 600px;
+    min-width: 150px;
+    height: 60px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+button {
+    height: 60px;
+    width: 60px;
+    background: white;
+    border-radius: 3px;
+    border: none;
+}
+
+button img {
+    height: 32px;
+}
+
+button:hover {
+    cursor: pointer;
+    background: silver;
+}
+
+@media screen and (max-width: 860px) {
+    input {
+        width: calc(100vw - 260px);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #input-box {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    input {
+        margin: 0 0 10px 0;
+        width: calc(100vw - 80px);
+    }
+    #timer {
+        margin: 0;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-height: 515px) {
+    .flex-start {
+        justify-content: flex-start;
+    }
+}
