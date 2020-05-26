@@ -139,7 +139,6 @@ header {
 }
 
 .project .text {
-    stroke: black 1px 1px;
     z-index: 1;
     margin: 10px;
     display: flex;

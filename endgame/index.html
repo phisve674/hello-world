@@ -1,18 +1,17 @@
 <!--
-    Att göra:
-    * Hitta/skapa en ikon till tabben i webbläsaren. [ ]
-    * Lägg till fler semantiska taggar. [ ]
-    * Optimera bilder. Lägg till media queries för bakgrundsbildens resulotion. [ ]
-    * Kör kod genom lighthouse m.m. och korregera eventuella problem. [ ]
-    * Se till att sidan fungerar i flera webbläsar. [ ] 
-
-    Ideer:
-    * Lägg till en transition när man går in på sidan.
-
-    Att göra mot slutet:
-    * Ta bort onödiga kommentarer och assets och lägg till kommentarer som gör koden enklare att läsa. [ ]
-    * Kör kod genom program/sida för att lägga till moz, webkit o.s.v. [ ]
-    * Lägg till länkar till Odin, Teo och Fredriks sidor. [ ]
+    SLUTSPURT
+    ~~~~~~~~~
+    * Tabb ikon (Done)
+    * Chrome theme-color (Done)
+    * Lighthouse o.s.v.
+    * Optimering (Done)
+    * Ta bort oanvända filer
+    * Ta bort onödiga kommentarer
+    * Semantik
+    * Testa andra webläsare och enheter (Done)
+    * Kör kod genom program/sida för att lägga till moz, webkit o.s.v.
+    * Lägg till länkar till Odin, Teo och Fredriks sidor
+    * Ta bort user select på saker och ting
 -->
 
 <!DOCTYPE html>
@@ -22,6 +21,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to my website!</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="theme-color" content="#202020" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/images/icons/icon-192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="assets/images/icons/icon-96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/icons/icon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/icons/icon-16.png"
+    />
+    <meta
+      name="description"
+      content="Welcome to my website! Here you can find some of my projects made with html, css and javascript, some download links as well as other various links."
+    />
   </head>
 
   <body>
@@ -45,20 +73,12 @@
       <ul id="navbar-links">
         <li>
           <a
-            href="http://epikraft.ddns.net:8088/"
-            id="epikraft"
-            title="Epikraft"
-            target="_blank"
-            ><img src="assets/images/icons/epikraft.png"
-          /></a>
-        </li>
-        <li>
-          <a
             href="https://github.com/phisve674"
             id="github"
             title="My Github"
             target="_blank"
-            ><img src="assets/images/icons/github.png"
+            rel="noreferrer"
+            ><img src="assets/images/icons/github.png" alt="Github Logo"
           /></a>
         </li>
         <li>
@@ -67,7 +87,8 @@
             id="reddit"
             title="Background Art"
             target="_blank"
-            ><img src="assets/images/icons/pexels.png"
+            rel="noreferrer"
+            ><img src="assets/images/icons/pexels.png" alt="Pexels Logo"
           /></a>
         </li>
       </ul>
@@ -167,7 +188,7 @@
               <div class="text">
                 <h2>CPS Test</h2>
                 <p>
-                  A clicks per seconds test to see how fast you can click. 
+                  A clicks per seconds test to see how fast you can click.
                 </p>
               </div>
             </article>
@@ -257,11 +278,11 @@
             around with them go right ahead.
           </p>
           <p>
-            On the downloads page you will find various files I want to
-            share. This includes an .osk file for a skin I use in a game called
-            osu! as well as a zip file for my media viewer project made into a
-            web-app executable. Unfortunately the app only works on windows at
-            the moment.
+            On the downloads page you will find various files I want to share.
+            This includes an .osk file for a skin I use in a game called osu! as
+            well as a zip file for my media viewer project made into a web-app
+            executable. Unfortunately the app only works on windows at the
+            moment.
           </p>
           <p>
             Finally, I have included a few links in the sidebar. These go to
